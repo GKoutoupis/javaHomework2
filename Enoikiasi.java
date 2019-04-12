@@ -35,27 +35,31 @@ public class Enoikiasi extends Object
 		this.extraDayKostos=extraDayKostos;
 
 	}
-	public void setOnomaPelati(onomaPelati)
+	public void setTemaxia(Integer temaxia)
+	{
+		this.temaxia=temaxia;
+	}
+	public void setOnomaPelati(String onomaPelati)
 	{
 		this.onomaPelati=onomaPelati;
 	}
-	public void setThlefPelati(thlefPelati)
+	public void setThlefPelati(Integer thlefPelati)
 	{
 		this.thlefPelati=thlefPelati;
 	}
-	public void setImeresEnoikiasis(imeresEnoikiasis)
+	public void setImeresEnoikiasis( Integer imeresEnoikiasis)
 	{
 		this.imeresEnoikiasis=imeresEnoikiasis;
 	}
-	public void setHmeromhniaEnoikiasis(hmeromhniaEnoikiasis)
+	public void setHmeromhniaEnoikiasis(String hmeromhniaEnoikiasis)
 	{
 		this.hmeromhniaEnoikiasis=hmeromhniaEnoikiasis;
 	}
-	public void setKostosEnoikiasis(kostosEnoikiasis)
+	public void setKostosEnoikiasis(double kostosEnoikiasis)
 	{
 		this.kostosEnoikiasis=kostosEnoikiasis;
 	}
-	public void setExtraDayKostos(extraDayKostos)
+	public void setExtraDayKostos(double extraDayKostos)
 	{
 		this.extraDayKostos=extraDayKostos;
 	}
@@ -83,9 +87,6 @@ public class Enoikiasi extends Object
 	{
 		return temaxia;
 	}
-	public void setTemaxia(Integer temaxia)
-	{
-		this.temaxia=temaxia;
-	}
+	
 	
 }
