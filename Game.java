@@ -1,4 +1,4 @@
-public class Game extends Item
+public class Game extends Enoikiasi
 {
 	public Game(String katigoria,String etairia,
 				String etosparagvghs, String titlos,
