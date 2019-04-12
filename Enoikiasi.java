@@ -6,13 +6,13 @@ public class Enoikiasi extends Object
 	private String titlos;
 	private String xronosenoikiasis;
 	private Integer temaxia;//posa temaxia exv diathesima pros enoikiasi
-	//private Integer a/a;
+	private Integer diarkeia;
 	private String onomaPelati="";
 	private Integer thlefPelati=-1;
 	private Integer imeresEnoikiasis=-1;
 	private Integer hmeromhniaEnoikiasis=-1;
 	private double kostosEnoikiasis=-1.0;
-	private double extraDayKostos=-1,0;
+	private double extraDayKostos=-1.0;
 
 	public Enoikiasi (String katigoria,String etairia,
 				String etosparagvghs, String titlos,
@@ -51,7 +51,7 @@ public class Enoikiasi extends Object
 	{
 		this.imeresEnoikiasis=imeresEnoikiasis;
 	}
-	public void setHmeromhniaEnoikiasis(String hmeromhniaEnoikiasis)
+	public void setHmeromhniaEnoikiasis(Integer hmeromhniaEnoikiasis)
 	{
 		this.hmeromhniaEnoikiasis=hmeromhniaEnoikiasis;
 	}

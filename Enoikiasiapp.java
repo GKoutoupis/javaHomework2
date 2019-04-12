@@ -1,9 +1,12 @@
 public class Enoikiasiapp{
 	public static void main(String[] args) {
 		
-
+      Dvd dvd1=new Dvd("dvd","finos film","1995","asa","7",5
+         ,"aaa","aaa","aaa",150);
+       Dvd dvd2=new Dvd("blue-ray","finos film","1996","asa","7",5
+         ,"aaa","aaa","aaa",100);
 		Scanner in=new Scanner(System.in);
-		Database data=new Database();
+		//Database data=new Database();
 		boolean done=false;
 		String answer;
 		String name;
@@ -28,15 +31,20 @@ public class Enoikiasiapp{
    	 				data.lookup(name,"dvd");
    	 				if (data.getItem(name,"dvd").getTemaxia()>0)
                   {
-                     System.out.println("Dose onomateponimo,thlefono,hmeromhnia enoikiasis,hmeres enoikiasis,kostos enoikiasis,kostos gia extra mera enoikiasis");
+                     System.out.println("Doste onomateponimo,thlefono,hmeromhnia enoikiasis,hmeres enoikiasis,kostos enoikiasis,kostos gia extra mera enoikiasis");
                      onoma=in.nextLine();
                      thlefono=in.nextInt();
                      hmeromhnia=in.nextLine();
                      hmeres=in.nextInt();
                      kostosenoik=in.nextDouble();
                      extrakostos=in.nextDouble();
-
-
+                     //πρεπει να δημιουργησουμε αντικειμενο ενοικιαση και να προσθεσουμε στο ARRAY noikiasmena
+                     //μπορω να περασω στον constructor του enoikiasi ολο το αντικειμενο που εχει δημιουργηθει η πρεπε
+                     //να τα δινω ενα ενα τα στοιχεια με μεθοδους get???
+                     Enoikiasi obj=new Enoikiasi(data.getItem(name,"dvd"),onoma,thlefono,hmeres,hmeromhnia
+                                                   ,kostosenoik,extrakostos);
+                     noikiasmena.add(obj);
+                     data.
                   }
 
    	 			}
