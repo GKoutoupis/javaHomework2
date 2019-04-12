@@ -26,7 +26,18 @@ public class Enoikiasiapp{
    	 				System.out.println("Onoma tainias?")
    	 				name=in.nextLine();
    	 				data.lookup(name,"dvd");
-   	 				data.getItem(name,"dvd");
+   	 				if (data.getItem(name,"dvd").getTemaxia()>0)
+                  {
+                     System.out.println("Dose onomateponimo,thlefono,hmeromhnia enoikiasis,hmeres enoikiasis,kostos enoikiasis,kostos gia extra mera enoikiasis");
+                     onoma=in.nextLine();
+                     thlefono=in.nextInt();
+                     hmeromhnia=in.nextLine();
+                     hmeres=in.nextInt();
+                     kostosenoik=in.nextDouble();
+                     extrakostos=in.nextDouble();
+
+
+                  }
 
    	 			}
    	 			else if(answer.equals("2"))

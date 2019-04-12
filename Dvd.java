@@ -1,4 +1,4 @@
-public class Dvd extends Item 
+public class Dvd extends Enoikiasi
 {
 	private String skinothetis;
 	private String senariografos;

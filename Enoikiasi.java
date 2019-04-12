@@ -32,7 +32,32 @@ public class Enoikiasi extends Object
 		this.imeresEnoikiasis=imeresEnoikiasis;
 		this.hmeromhniaEnoikiasis=hmeromhniaEnoikiasis;
 		this.kostosEnoikiasis=kostosEnoikiasis;
+		this.extraDayKostos=extraDayKostos;
 
+	}
+	public void setOnomaPelati(onomaPelati)
+	{
+		this.onomaPelati=onomaPelati;
+	}
+	public void setThlefPelati(thlefPelati)
+	{
+		this.thlefPelati=thlefPelati;
+	}
+	public void setImeresEnoikiasis(imeresEnoikiasis)
+	{
+		this.imeresEnoikiasis=imeresEnoikiasis;
+	}
+	public void setHmeromhniaEnoikiasis(hmeromhniaEnoikiasis)
+	{
+		this.hmeromhniaEnoikiasis=hmeromhniaEnoikiasis;
+	}
+	public void setKostosEnoikiasis(kostosEnoikiasis)
+	{
+		this.kostosEnoikiasis=kostosEnoikiasis;
+	}
+	public void setExtraDayKostos(extraDayKostos)
+	{
+		this.extraDayKostos=extraDayKostos;
 	}
 	public String getKatigoria()
 	{
