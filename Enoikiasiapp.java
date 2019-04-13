@@ -15,13 +15,14 @@ public class Enoikiasiapp{
 		String name;
       String onoma;
       Integer  thlefono;
-      String hmeromhnia;
+      Integer hmeromhnia;
       Integer hmeres;
       double  kostosenoik;
       double extrakostos;
       Integer pos;
-
-
+      List<String> messages = Arrays.asList("onomateponimo","thlefono"
+         ,"hmeromhnia enoikiasis","hmeres enoikiasis","kostos enoikiasis","kostos gia extra mera enoikiasis");
+      Integer tmp1;
 
 		while (!done)
 		{
@@ -40,23 +41,33 @@ public class Enoikiasiapp{
    	 				name=in.nextLine();
    	 				if (data.booleanfinder(name,"dvd"))
                   {  pos=data.positionfinder(name, "dvd");
-                     System.out.println("Doste onomateponimo,thlefono,hmeromhnia enoikiasis,hmeres enoikiasis,kostos enoikiasis,kostos gia extra mera enoikiasis");
+                     System.out.println(data.prosenoik.get(pos));
+                     System.out.println("Doste onomateponimo string");
                      onoma=in.nextLine();
+                     System.out.println("Doste thlefono integer");
                      thlefono=in.nextInt();
-                     hmeromhnia=in.nextLine();
+                     System.out.println("Doste hmeromhnia enoikiasis string");
+                     hmeromhnia=in.nextInt();
+                     System.out.println("Doste hmeres enoikiasis Integer");
                      hmeres=in.nextInt();
+                     System.out.println("Doste kostosenoik double");
                      kostosenoik=in.nextDouble();
+                     System.out.println("Doste extra kostos double");
                      extrakostos=in.nextDouble();
-
-                  
-                    // Enoikiasi obj=new Enoikiasi(data.prosenoik.get(pos),onoma,thlefono,hmeres,hmeromhnia
-                                                   //,kostosenoik,extrakostos);
-
-                     data.noikiasmena.add(data.prosenoik.get(pos));//prosthetei to antikeimeno sto arraylist noikiasmena
-                     data.noikiasmena.get(data.noikiasmena.size()).setOnomaPelati(onoma);//updatePelati(onoma,thlefono,hmeromhnia,hmeres,kostosenoik,extrakostos);
-                     //update sta nea stoixeia pou exei balei o xrhsths
-                     data.noikiastike(pos);//meivsh apothematos kata ena.
                      
+
+                     data.noikiasmena.add(data.prosenoik.get(pos));
+                     System.out.println(data.noikiasmena.get(0));
+                     tmp1=data.noikiasmena.size();
+                     tmp1--;
+                     data.noikiasmena.get(tmp1).setOnomaPelati(onoma);//updatePelati(onoma,thlefono,hmeromhnia,hmeres,kostosenoik,extrakostos);
+                     data.noikiasmena.get(tmp1).setThlefPelati(thlefono);
+                     data.noikiasmena.get(tmp1).setImeresEnoikiasis(hmeres);
+                     data.noikiasmena.get(tmp1).setHmeromhniaEnoikiasis(hmeromhnia);
+                     data.noikiasmena.get(tmp1).setKostosEnoikiasis(kostosenoik);
+                     data.noikiasmena.get(tmp1).setExtraDayKostos(extrakostos);
+                     data.noikiastike(pos);//meivsh apothematos kata ena.
+
                   }
                   else System.out.println("den yparxei ayto poy zhtate!");
                   done=true;
