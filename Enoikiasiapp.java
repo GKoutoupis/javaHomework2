@@ -1,18 +1,25 @@
+import java.util.*;
+
+
 public class Enoikiasiapp{
 	public static void main(String[] args) {
 		
-      Dvd dvd1=new Dvd("dvd","finos film","1995","asa","7",5
-         ,"aaa","aaa","aaa",150);
-       Dvd dvd2=new Dvd("blue-ray","finos film","1996","asa","7",5
-         ,"aaa","aaa","aaa",100);
-
+      Dvd dvd1=new Dvd("dvd","finos film","1995","asa","7",5 ,"aaa",69748,150,45,3.7,4.5,"aaaa","aaa","aaa",120);
+      Dvd dvd2=new Dvd("blue-ray","finos film","1995","asa","7",5 ,"aaa",69748,150,45,3.7,4.5,"aaaa","aaa","aaa",120);
 		Scanner in=new Scanner(System.in);
 		Database data=new Database();
-      prosenoik.add(dvd1);
-      prosenoik.add(dvd2);
+      data.prosenoik.add(dvd1);
+      data.prosenoik.add(dvd2);
 		boolean done=false;
 		String answer;
 		String name;
+      String onoma;
+      Integer  thlefono;
+      String hmeromhnia;
+      Integer hmeres;
+      double  kostosenoik;
+      double extrakostos;
+      Integer pos;
 
 
 
@@ -31,8 +38,8 @@ public class Enoikiasiapp{
    	 			if (answer.equals("1")) {
    	 				System.out.println("Onoma tainias?");
    	 				name=in.nextLine();
-   	 				if (exeitemaxia(name) & yparxei(name,"dvd"))
-                  {  
+   	 				if (data.booleanfinder(name,"dvd"))
+                  {  pos=data.positionfinder(name, "dvd");
                      System.out.println("Doste onomateponimo,thlefono,hmeromhnia enoikiasis,hmeres enoikiasis,kostos enoikiasis,kostos gia extra mera enoikiasis");
                      onoma=in.nextLine();
                      thlefono=in.nextInt();
@@ -40,12 +47,16 @@ public class Enoikiasiapp{
                      hmeres=in.nextInt();
                      kostosenoik=in.nextDouble();
                      extrakostos=in.nextDouble();
-                     
+
                   
-                     Enoikiasi obj=new Enoikiasi(prosenoik.get(name),onoma,thlefono,hmeres,hmeromhnia
-                                                   ,kostosenoik,extrakostos);
-                     noikiasmena.add(obj);
-                     prosenoik.noikiastike(name,"dvd");
+                    // Enoikiasi obj=new Enoikiasi(data.prosenoik.get(pos),onoma,thlefono,hmeres,hmeromhnia
+                                                   //,kostosenoik,extrakostos);
+
+                     data.noikiasmena.add(data.prosenoik.get(pos));//prosthetei to antikeimeno sto arraylist noikiasmena
+                     data.noikiasmena.get(data.noikiasmena.size()).setOnomaPelati(onoma);//updatePelati(onoma,thlefono,hmeromhnia,hmeres,kostosenoik,extrakostos);
+                     //update sta nea stoixeia pou exei balei o xrhsths
+                     data.noikiastike(pos);//meivsh apothematos kata ena.
+                     
                   }
                   else System.out.println("den yparxei ayto poy zhtate!");
                   done=true;

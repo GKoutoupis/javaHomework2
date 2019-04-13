@@ -88,5 +88,4 @@ public class Enoikiasi extends Object
 		return temaxia;
 	}
 	
-	
 }

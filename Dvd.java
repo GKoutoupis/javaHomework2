@@ -27,4 +27,5 @@ public class Dvd extends Enoikiasi
 		this.ithopoioi=ithopoioi;
 		this.diarkeia=diarkeia;
 	}
-		}
+
+}
