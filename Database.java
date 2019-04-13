@@ -34,9 +34,9 @@ public class Database
 		temaxia=prosenoik.get(tmp).getTemaxia();
 		prosenoik.get(tmp).setTemaxia(temaxia-1);
 	}
-	public boolean yparxei(String theName,String Katigoria)
+	public boolean yparxei(String theName,String katigoria)
 	{
-		if (prosenoik.get(theName).getKatigoria().equals(Katigoria))
+		if (prosenoik.get(theName).getKatigoria().equals(katigoria))
 		{
 			return true;
 		}
@@ -50,5 +50,10 @@ public class Database
 		}
 		return false;
 	}
-	public 
+	public Integer objfinder(String theName, String katigoria)
+	{
+		if yparxei(theName, katigoria)
+		{ 
+			tmp=index
+		}
 	}

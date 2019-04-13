@@ -40,6 +40,7 @@ public class Enoikiasiapp{
                      hmeres=in.nextInt();
                      kostosenoik=in.nextDouble();
                      extrakostos=in.nextDouble();
+                     
                   
                      Enoikiasi obj=new Enoikiasi(prosenoik.get(name),onoma,thlefono,hmeres,hmeromhnia
                                                    ,kostosenoik,extrakostos);
