@@ -5,8 +5,11 @@ public class Enoikiasiapp{
          ,"aaa","aaa","aaa",150);
        Dvd dvd2=new Dvd("blue-ray","finos film","1996","asa","7",5
          ,"aaa","aaa","aaa",100);
+
 		Scanner in=new Scanner(System.in);
-		//Database data=new Database();
+		Database data=new Database();
+      prosenoik.add(dvd1);
+      prosenoik.add(dvd2);
 		boolean done=false;
 		String answer;
 		String name;
@@ -22,15 +25,14 @@ public class Enoikiasiapp{
    	 		
    	 		answer=in.nextLine();
    	 		if (answer.equals("0")){
-   	 			System.out.println("\n1. for dvd")
-   	 			System.out.println("2. for blue-ray")
+   	 			System.out.println("\n1. for dvd");
+   	 			System.out.println("2. for blue-ray");
    	 			answer=in.nextLine();
    	 			if (answer.equals("1")) {
-   	 				System.out.println("Onoma tainias?")
+   	 				System.out.println("Onoma tainias?");
    	 				name=in.nextLine();
-   	 				data.lookup(name,"dvd");
-   	 				if (data.getItem(name,"dvd").getTemaxia()>0)
-                  {
+   	 				if (exeitemaxia(name) & yparxei(name,"dvd"))
+                  {  
                      System.out.println("Doste onomateponimo,thlefono,hmeromhnia enoikiasis,hmeres enoikiasis,kostos enoikiasis,kostos gia extra mera enoikiasis");
                      onoma=in.nextLine();
                      thlefono=in.nextInt();
@@ -38,44 +40,18 @@ public class Enoikiasiapp{
                      hmeres=in.nextInt();
                      kostosenoik=in.nextDouble();
                      extrakostos=in.nextDouble();
-                     //πρεπει να δημιουργησουμε αντικειμενο ενοικιαση και να προσθεσουμε στο ARRAY noikiasmena
-                     //μπορω να περασω στον constructor του enoikiasi ολο το αντικειμενο που εχει δημιουργηθει η πρεπε
-                     //να τα δινω ενα ενα τα στοιχεια με μεθοδους get???
-                     Enoikiasi obj=new Enoikiasi(data.getItem(name,"dvd"),onoma,thlefono,hmeres,hmeromhnia
+                  
+                     Enoikiasi obj=new Enoikiasi(prosenoik.get(name),onoma,thlefono,hmeres,hmeromhnia
                                                    ,kostosenoik,extrakostos);
                      noikiasmena.add(obj);
-                     data.
+                     prosenoik.noikiastike(name,"dvd");
                   }
+                  else System.out.println("den yparxei ayto poy zhtate!");
+                  done=true;
 
-   	 			}
-   	 			else if(answer.equals("2"))
-   	 			{
-   	 				System.out.println("Onoma tainias?")
-   	 				name=in.nextLine();
-   	 				data.lookup(name,"blue-ray");
-
-   	 				data.getItem(name,"blue-ray").;
-   	 			}
-
-   	 		}
-   	 		else if(answer.equals("1"))
-   	 		{
-   	 			System.out.println("type konsola \n1. XBOX\n2.PLAYSTATION\n3.NINTENDO");
-   	 			answer=in.nextLine();
-   	 			if (answer.equals("1")) {
-   	 				kathgoria="XBOX"	;
-   	 			}
-   	 			else if (answer.equals("2")) {
-   	 				kathgoria="PLAYSTATION";
-   	 			}
-   	 			else if(answer.equals("3")){
-   	 				kathgoria="NINTENDO";
-   	 			}
-   	 			System.out.println("type onoma paixnidiou")
-   	 			name=in.nextLine();
-   	 			data.lookup(name,kathgoria);
-   	 		}
-		}
-	}
-
+   	 			}   
+   }
 }
+}
+}
+
