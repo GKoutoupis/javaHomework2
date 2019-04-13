@@ -12,17 +12,6 @@ public class Database
 	Integer tmp;
 	Integer temaxia;
 
-	/*public void lookup(String theName,String katigoria )
-	{
-		for (Enoikiasi i  : prosenoik){
-			if(i.getTitlos().equals(theName)& i.getKatigoria()==katigoria)
-				{System.out.println(i);}
-		}
-		
-	
-	}	
-
-	*/
 	public void noikiastike(Integer pos)//otan noikiastei kati apo ton katalogo meivnei ta diatheima temaxia kata ena
 	{	tmp=prosenoik.get(pos).getTemaxia();
 		prosenoik.get(pos).setTemaxia(tmp-1);
@@ -54,14 +43,4 @@ public class Database
 	return false;
 	}
 
-	/*public void updatePelati(String onoma, String thlefono, String hmeromhnia,Integer hmeres, double kostosenoik,double extrakostos)
-	{	
-		data.noikiasmena.get(data.noikiasmena.size()).setOnomaPelati(onoma);
-		data.noikiasmena.get(data.noikiasmena.size()-1).setThlefPelati(thlefono);
-		data.noikiasmena.get(data.noikiasmena.size()-1).setHmeromhniaEnoikiasis(hmeromhnia);
-		data.noikiasmena.get(data.noikiasmena.size()-1).setImeresEnoikiasis(hmeres);
-		data.noikiasmena.get(data.noikiasmena.size()-1).setKostosEnoikiasis(kostosenoik);
-		data.noikiasmena.get(data.noikiasmena.size()-1).setExtraDayKostos(extrakostos);
-
-	}*/
 }
