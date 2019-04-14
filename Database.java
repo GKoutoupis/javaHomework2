@@ -12,7 +12,7 @@ public class Database
 	public void lookup(String theName,String katigoria )
 	{
 		for (Enoikiasi i  : prosenoik){
-			if(i.getTitlos().equals(theName)&& i.getKatigoria()==katigoria)
+			if(i.getTitlos().equals(theName)& i.getKatigoria()==katigoria)
 				{System.out.println(i);}
 		}
 		
@@ -22,7 +22,7 @@ public class Database
 	public Enoikiasi getItem(String theName,String katigoria)
 	{
 		for (Enoikiasi i  : prosenoik){
-			if(i.getTitlos().contains(theName)&& i.getKatigoria()==katigoria)
+			if(i.getTitlos().contains(theName)& i.getKatigoria()==katigoria)
 				{return i;}
 		}
 	}
