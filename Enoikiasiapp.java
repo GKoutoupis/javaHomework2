@@ -4,15 +4,16 @@ import java.util.*;
 public class Enoikiasiapp{
 	public static void main(String[] args) {
 		
-      Dvd dvd1=new Dvd("dvd","finos film","1995","asa","7",5 ,"aaa",69748,150,45,3.7,4.5,"aaaa","aaa","aaa",120);
-      Dvd dvd2=new Dvd("blue-ray","finos film","1995","asa","7",5 ,"aaa",69748,150,45,3.7,4.5,"aaaa","aaa","aaa",120);
+      Dvd dvd1=new Dvd("dvd","finos film","1995","bakalogatos","7",5 ,"babis",69748,150,45,3.7,4.5,"komodia","aaaa","aaa","aaa",120);
+      Dvd dvd2=new Dvd("blue-ray","finos film","1995","asa","7",5 ,"aaa",69748,150,45,3.7,4.5,"komodia","aaaa","aaa","aaa",120);
 
 		Scanner in=new Scanner(System.in);
 		Database data=new Database();
       data.prosenoik.add(dvd1);
       data.prosenoik.add(dvd2);
 		boolean done=false;
-		String answer;
+      Integer answer;
+      String answerTemp;
 		String name;
       String onoma;
       Integer  thlefono;
@@ -22,7 +23,7 @@ public class Enoikiasiapp{
       double extrakostos;
       Integer pos;
       Integer tmp1;
-      String kathgoria=null;
+      String platforma=null;
 
 		while (!done)
 		{
@@ -31,36 +32,44 @@ public class Enoikiasiapp{
    	 		System.out.println("2.Episkopisi enoikiasevn");
    	 		System.out.println("3. Exit");
    	 		
-   	 		answer=in.nextLine();
-   	 		if (answer.equals("0"))
-            {
+             answerTemp=in.nextLine();
+             answer = Integer.parseInt(answerTemp);
+   	 		switch (answer) {
+             case 0:
    	 			System.out.println("\n1. for dvd");
    	 			System.out.println("2. for blue-ray");
-   	 			answer=in.nextLine();
-   	 			if (answer.equals("1")) 
-               {kathgoria="dvd";}
-               else if (answer.equals("2")) 
-               {
-               kathgoria ="blue-ray";      
+   	 			answerTemp=in.nextLine();
+               answer = Integer.parseInt(answerTemp);
+                
+              switch (answer) {
+                 case 1: 
+                  platforma="dvd";
+                  break;
+                 case 2: 
+                  platforma ="blue-ray";
+                  break;
                }  
 
    	 			System.out.println("Onoma tainias?");
    	 			name=in.nextLine();
-   	 			if (data.booleanfinder(name,kathgoria))
-                  {  
-                     pos=data.positionfinder(name, kathgoria);
-                     System.out.println(data.prosenoik.get(pos));
-                     System.out.println("Doste onomateponimo string");
+   	 			if (data.booleanfinder(name,platforma)){
+                   
+                  pos=data.positionfinder(name, platforma);
+                  System.out.println(data.prosenoik.get(pos));//toString
+                  System.out.println("Tha thelate na noikasete auth thn tainia? y/n");
+                  String answer2=in.nextLine();
+                  if ( answer2.equals("y")) {
+                     System.out.println("Doste onomateponimo (string)");
                      onoma=in.nextLine();
-                     System.out.println("Doste thlefono integer");
+                     System.out.println("Doste thlefono (integer)");
                      thlefono=in.nextInt();
-                     System.out.println("Doste hmeromhnia enoikiasis string");
+                     System.out.println("Doste hmeromhnia enoikiasis (string)");
                      hmeromhnia=in.nextInt();
-                     System.out.println("Doste hmeres enoikiasis Integer");
+                     System.out.println("Doste hmeres enoikiasis (integer)");
                      hmeres=in.nextInt();
-                     System.out.println("Doste kostosenoik double");
+                     System.out.println("Doste kostosenoik (double)");
                      kostosenoik=in.nextDouble();
-                     System.out.println("Doste extra kostos double");
+                     System.out.println("Doste extra kostos (double)");
                      extrakostos=in.nextDouble();
                      
 
@@ -68,9 +77,8 @@ public class Enoikiasiapp{
                      System.out.println(data.noikiasmena.get(0));
                      tmp1=data.noikiasmena.size();
                      tmp1--;
-                     
+                  
                      //update ta stoixeia tou pelati sto antikeimeno Enoikiasi mesa sth Arraylist noikiasmena
-                     data.noikiasmena.get(tmp1).setOnomaPelati(onoma);
                      data.noikiasmena.get(tmp1).setThlefPelati(thlefono);
                      data.noikiasmena.get(tmp1).setImeresEnoikiasis(hmeres);
                      data.noikiasmena.get(tmp1).setHmeromhniaEnoikiasis(hmeromhnia);
@@ -78,26 +86,34 @@ public class Enoikiasiapp{
                      data.noikiasmena.get(tmp1).setExtraDayKostos(extrakostos);
                      //meivsh apothematos kata ena.
                      data.noikiastike(pos);
-            }
-                  
-            else if (answer.equals("1")) 
-            {
+                  }
+                } else {
+                   System.out.println("\nDen uparxei auth h tainia gia auth thn platforma");
+                }
+             break;             
+             case 1:           
                   System.out.println("\n1. for Playstation");
                   System.out.println("2. for Xbox");
                   System.out.println("3. for Nintendo");
-                  answer=in.nextLine();
+                  answerTemp=in.nextLine();
+                  answer = Integer.parseInt(answerTemp);
 
-                  if (answer.equals("1"))
-                     {kathgoria="playstation";}
-                  else if (answer.equals("2")) 
-                     { kathgoria="xbox" ; }
-                  else if(answer.equals("3"))
-                     {kathgoria="nintendo";}
+                  switch (answer) {
+                     case 1:
+                     platforma="playstation";
+                     break;
+                     case 2:
+                     platforma="xbox" ;
+                     break;
+                     case 3:
+                     platforma="nintendo";
+                     break;
+                  }
                      
                      System.out.println("Onoma paixnidiou?");
                      name=in.nextLine();
-                     if (data.booleanfinder(name,kathgoria))
-                        {  pos=data.positionfinder(name, kathgoria);
+                     if (data.booleanfinder(name,platforma))
+                        {  pos=data.positionfinder(name, platforma);
                            System.out.println(data.prosenoik.get(pos));
                            System.out.println("Doste onomateponimo string");
                            onoma=in.nextLine();
@@ -124,16 +140,21 @@ public class Enoikiasiapp{
                            data.noikiasmena.get(tmp1).setKostosEnoikiasis(kostosenoik);
                            data.noikiasmena.get(tmp1).setExtraDayKostos(extrakostos);
                            data.noikiastike(pos);//meivsh apothematos kata ena.
+                        } else {
+                           System.out.print("\nDen uparxei auto to paixnidi gia auth thn platforma");
+                        }
+             case 2:
+             for(int i = 0; i < data.noikiasmena.size(); i++) {   
+               System.out.print(data.noikiasmena.get(i));
+               }
+             break;            
+                        
+             case 3:
+               done=true;
+             break;      
 
-                  }
-                     
-                  }
-         else if(answer.equals("3"))
-            {done=true;}
-                  
-
-   	 			}   
+            }
+      }
    }
-}
-}
 
+}

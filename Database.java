@@ -12,16 +12,16 @@ public class Database
 	Integer tmp;
 	Integer temaxia;
 
-	public void noikiastike(Integer pos)//otan noikiastei kati apo ton katalogo meivnei ta diatheima temaxia kata ena
+	public void noikiastike(Integer pos)//otan noikiastei kati apo ton katalog o meivnei ta diatheima temaxia kata ena
 	{	tmp=prosenoik.get(pos).getTemaxia();
 		prosenoik.get(pos).setTemaxia(tmp-1);
 	}
-	public Integer positionfinder(String theName, String katigoria)
+	public Integer positionfinder(String theName, String platforma)
 	{
 		for (Enoikiasi e: prosenoik)
 		{
 			if (e.getTitlos().equals(theName)) {
-				if (e.getKatigoria().equals(katigoria)) {
+				if (e.getPlatforma().equals(platforma)) {
 					return prosenoik.indexOf(e);
 				}
 			}
@@ -29,12 +29,12 @@ public class Database
 		}
 		return -1;
 	}
-	public boolean booleanfinder(String theName, String katigoria)
+	public boolean booleanfinder(String theName, String platforma)
 	{
 		for (Enoikiasi e: prosenoik)
 		{
 			if (e.getTitlos().equals(theName)) {
-				if (e.getKatigoria().equals(katigoria)) {
+				if (e.getPlatforma().equals(platforma)) {
 					return true;
 				}
 			}
