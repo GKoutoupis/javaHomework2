@@ -8,7 +8,7 @@ public class Enoikiasi
 	private Integer temaxia;//posa temaxia exv diathesima pros enoikiasi
 	private Integer diarkeia;
 	private String onomaPelati="";
-	private Integer thlefPelati=-1;
+	private Long thlefPelati=-1;
 	private Integer imeresEnoikiasis=-1;
 	private Integer hmeromhniaEnoikiasis=-1;
 	private double kostosEnoikiasis=-1.0;
@@ -18,7 +18,7 @@ public class Enoikiasi
 	public Enoikiasi (String platforma,String etairia,
 				String etosparagvghs, String titlos,
 				String xronosenoikiasis, Integer temaxia,
-				String onomaPelati, Integer thlefPelati,
+				String onomaPelati, Long thlefPelati,
 				Integer imeresEnoikiasis, Integer hmeromhniaEnoikiasis,
 				double kostosEnoikiasis, double extraDayKostos, String katigoria)
 	{
@@ -26,12 +26,12 @@ public class Enoikiasi
 		this.etairia=etairia;
 		this.etosparagvghs=etosparagvghs;
 		this.titlos=titlos;
-		this.xronosenoikiasis=xronosenoikiasis;
+		this.xronosenoikiasis=xronosenoikiasis;//ana vdomada h ana hmera
 		this.temaxia=temaxia;
 		this.onomaPelati=onomaPelati;
 		this.thlefPelati=thlefPelati;
-		this.imeresEnoikiasis=imeresEnoikiasis;
-		this.hmeromhniaEnoikiasis=hmeromhniaEnoikiasis;
+		this.imeresEnoikiasis=imeresEnoikiasis;// poses meres tha to noikiasoume
+		this.hmeromhniaEnoikiasis=hmeromhniaEnoikiasis;// pote to noikiasame
 		this.kostosEnoikiasis=kostosEnoikiasis;
 		this.extraDayKostos=extraDayKostos;
 		this.katigoria=katigoria;
@@ -45,7 +45,7 @@ public class Enoikiasi
 	{
 		this.onomaPelati=onomaPelati;
 	}
-	public void setThlefPelati(Integer thlefPelati)
+	public void setThlefPelati(Long thlefPelati)
 	{
 		this.thlefPelati=thlefPelati;
 	}
@@ -93,5 +93,43 @@ public class Enoikiasi
 	{
 		return temaxia;
 	}
-	
-}
+
+	public String getOnomaPelati()
+	{
+		return onomaPelati;
+	}
+
+	public Long getThlefPelati()
+	{
+		return thlefPelati;
+	}
+
+	public Integer getImeresEnoikiasis()
+	{
+		return imeresEnoikiasis;
+	}
+
+	public Integer getHmeromhniaEnoikiasis()
+	{
+		return hmeromhniaEnoikiasis;
+	}
+
+	public Double getKostosEnoikiasis()
+	{
+		return kostosEnoikiasis;
+	}
+
+	public Double getExtraDayKostos()
+	{
+		return extraDayKostos;
+	}
+
+	public String toString()
+    {
+        return "---------------------------------------- \n Onoma : " + getTitlos() + "\n Platforma: " + getPlatforma() + "\n Katigories: " + getKatigoria()+ "\n Etos Paragvghs: " + getEtosparagvghs() + "\n Etairia Paragvghs: " + getEtairia() + "\n Xronos Enoikiasis: " + getXronosenoikiasis() + "\n Diathesima Temaxia: " + getTemaxia();
+	} 
+	public String toString2()
+	{
+		return this.toString() + "\n Onoma Pelath: " + getOnomaPelati() + "\n Thlefwno Pelath:  " + getThlefPelati() + "\n Imeres Enoikiasis: " + getImeresEnoikiasis() + "\n Hmerominia Enoikiasis: " + getHmeromhniaEnoikiasis() + "\n Kostos Enoikiasis: " + getKostosEnoikiasis() + "\n Extra Day Kostos: " + getExtraDayKostos();
+	}
+} 

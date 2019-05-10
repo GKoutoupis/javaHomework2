@@ -8,7 +8,7 @@ public class Dvd extends Enoikiasi
 	public Dvd(String platforma,String etairia,
 				String etosparagvghs, String titlos,
 				String xronosenoikiasis, Integer temaxia,
-				String onomaPelati, Integer thlefPelati,
+				String onomaPelati, Long thlefPelati,
 				Integer imeresEnoikiasis, Integer hmeromhniaEnoikiasis,
 				double kostosEnoikiasis,double extraDayKostos, String katigoria,
 				String skinothetis, String senariografos,
@@ -27,9 +27,29 @@ public class Dvd extends Enoikiasi
 		this.ithopoioi=ithopoioi;
 		this.diarkeia=diarkeia;
 	}
+	public String getSkinothetis()
+	{
+		return skinothetis;
+	}
+
+	public String getSenariografos()
+	{
+		return senariografos;
+	}
+
+	public String getIthopoioi()
+	{
+		return ithopoioi;
+	}
+
+	public Integer getDiarkeia()
+	{
+		return diarkeia;
+	}
 	public String toString()
     {
-        return "\n Onoma Tainias: " + getTitlos() + "\n Platforma: " + getPlatforma() + "\n Katigories: " + getKatigoria()+ "\n Etos Paragvghs: " + getEtosparagvghs() + "\n Etairia Paragvghs: " + getEtairia() + "\n Xronos Enoikiasis: " + getXronosenoikiasis() + "\n Diathesima Temaxia: " + getTemaxia();
-    } 
-
+        return super.toString() + "\n Skinotheths: " + getSkinothetis() + "\n Senariografos: " + getSenariografos() + "\n Ithopoioi: " + getIthopoioi() + "\n Diarkeia: " + getDiarkeia();
+	} 
+	
+	
 }

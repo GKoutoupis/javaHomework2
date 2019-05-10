@@ -17,8 +17,5 @@ public class Game extends Enoikiasi
 				 kostosEnoikiasis, extraDayKostos, katigoria);
 
 	}
-	public String toString()
-    {
-		return "\n Onoma Paixnidiou: " + getTitlos() + "\n Platforma: " + getPlatforma() + "\n Katigories: " + getKatigoria()+ "\n Etos Paragvghs: " + getEtosparagvghs() + "\n Etairia Paragvghs: " + getEtairia() + "\n Xronos Enoikiasis: " + getXronosenoikiasis() + "\n Diathesima Temaxia: " + getTemaxia();   
-	} 
+	
 }
