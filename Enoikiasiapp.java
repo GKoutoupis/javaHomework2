@@ -3,13 +3,29 @@ import java.util.*;
 public class Enoikiasiapp {
    public static void main(String[] args) {
 
-      //Lista Pros Enoikiasi
-      Dvd dvd1 = new Dvd("dvd", "finos film", "1995", "DVD", "1", 5, "onomaPelati",
-            6900000000L/* thlefPelati */, 150/* hmeres enoikiasis */, 45/* hmeromhnia enoikiasis */,
-            3.7/* kostos enoikiasis */, 4.5/*extra day kostos*/, "komodia", "skinotheths", "senariografos", "ithopoioi", 120/*diarkeia*/);
-      Dvd dvd2 = new Dvd("blue-ray", "finos film", "1995", "BR", "7", 5, "onomaPelati", 6971234567L, 150, 45, 3.7, 4.5, "komodia",
-            "aaaa", "aaa", "aaa", 120);
-      Game game1 = new Game("game", "nintendo", "1996", "Pokemon Blue", "7", 2019, "onomaPelati", 6979787675L, 7, 1011, 2.5, 3.0, "Rpg");
+      // Lista Pros Enoikiasi
+      Dvd dvd1 = new Dvd("dvd", "finos film", "1995", "DVD", 1, 5, "onomaPelati", 6900000000L/* thlefPelati */,
+            150/* hmeres enoikiasis */, 45/* hmeromhnia enoikiasis */, 3.7/* kostos enoikiasis */,
+            4.5/* extra day kostos */, "komodia",0.0, "skinotheths", "senariografos", "ithopoioi", 120/* diarkeia */);
+      Dvd dvd2 = new Dvd("blue-ray", "finos film", "1995", "BR", 1, 5, "onomaPelati", 6971234567L, 150, 45, 3.7, 4.5,
+            "komodia",0.0, "aaaa", "aaa", "aaa", 120);
+      Dvd dvd3 = new Dvd("dvd", "lucasarts", "1977", "Star Wars", 7, 5, "onomaPelati", 6998979695L, 7, 1411, 3.7, 1,
+            "sci-fi",0.0, "Lucas", "Lucas", "Carrie Fisher,Mark Hamill,Harrison Ford", 121);
+      Dvd dvd4 = new Dvd("blue-ray", "New Line Cinema", "2003","Return of the King", 1, 5,
+           "onomaPelati", 698988878685L, 7, 208, 3.7, 4.5, "adventure,sci-fi",0.0, "Peter Jackson", "J.R.R Tolkien",
+          "Elijah Wood,Viggo Mortensen,Ian McKellen", 201);
+      Game game1 = new Game("nintendo", "nintendo", "1996", "Pokemon Blue", 7, 20, "onomaPelati", 6979787675L, 7,
+            1011, 2.5, 3.0, "Rpg",0.0);
+      Game game2 = new Game("nintendo", "nintendo", "1983", "Super Mario Bros", 7, 20, "onomaPelati", 6969686766L,
+            7, 305, 2.5, 3.0, "Arcade",0.0);
+      Game game3 = new Game("Playstation", "Ubisoft", "2000", "Prince of Persia Sands of Time", 7, 2001,
+            "onomaPelati", 6959585756L, 7, 282, 2.5, 3.0, "Adventure,Action",0.0);
+      Game game4 = new Game("Playstation", "Bethesda", "2011", "Skyrim", 7, 202, "onomaPelati", 6949484746L, 60, 216,
+            2.5, 3.0, "RPG,Adventure",0.0);
+      Game game5 = new Game("Xbox", "Microsoft", "2001", "Halo", 7, 4, "onomaPelati", 6939383736L, 7, 34, 2.5, 3.0,
+            "Shooting,Adventure",0.0);
+      Game game6 = new Game("Xbox", "Microsoft", "2018", "Sea of Thieves", 7, 18, "onomaPelati", 6929282726L, 7, 45,
+            2.5, 3.0, "MMO",0.0);
 
       Scanner in = new Scanner(System.in);
       Database data = new Database();
@@ -28,6 +44,8 @@ public class Enoikiasiapp {
       Integer pos;
       Integer tmp1;
       String platforma = null;
+      Double telikoKostos;
+      Integer xronia;
 
       while (!done) {
          System.out.println("\n0. Episkopisi diathesimvn tainivn");
@@ -56,12 +74,12 @@ public class Enoikiasiapp {
                System.out.println("Tha thelate na noikasete auth thn tainia? y/n");
                answer = in.nextLine();
                if (answer.equals("y")) {
-                  if (data.prosenoik.get(pos).getTemaxia > 0) {
+                  if (data.prosenoik.get(pos).getTemaxia() > 0) {
                      System.out.println("Doste onomateponimo (string)");
                      onoma = in.nextLine();
                      System.out.println("Doste thlefono (integer)");
                      thlefono = in.nextLong();
-                     System.out.println("Doste hmeromhnia enoikiasis (string)");
+                     System.out.println("Doste hmeromhnia enoikiasis (string)"); 
                      hmeromhnia = in.nextInt();
                      System.out.println("Doste hmeres enoikiasis (integer)");
                      hmeres = in.nextInt();
@@ -69,7 +87,12 @@ public class Enoikiasiapp {
                      kostosenoik = in.nextDouble();
                      System.out.println("Doste extra kostos (double)");
                      extrakostos = in.nextDouble();
-
+                     if (answer2.equals("2")||((answer2.equals("1"))&&data.prosenoik.get(pos).getEtosparagvghs()=="2019")){
+                        data.prosenoik.get(pos).setXronosEnoikiasis(1);
+                     } else { 
+                        data.prosenoik.get(pos).setXronosEnoikiasis(7);
+                     }
+                     
                      data.noikiasmena.add(data.prosenoik.get(pos));
                      System.out.println(data.noikiasmena.get(0));
                      tmp1 = data.noikiasmena.size();
@@ -82,6 +105,7 @@ public class Enoikiasiapp {
                      data.noikiasmena.get(tmp1).setHmeromhniaEnoikiasis(hmeromhnia);
                      data.noikiasmena.get(tmp1).setKostosEnoikiasis(kostosenoik);
                      data.noikiasmena.get(tmp1).setExtraDayKostos(extrakostos);
+                     data.noikiasmena.get(tmp1).setTelikoKostos(kostosenoik+(hmeres-data.prosenoik.get(pos).getXronosenoikiasis())*extrakostos);
                      // meivsh apothematos kata ena.
                      data.noikiastike(pos);
                   } else {
@@ -113,7 +137,7 @@ public class Enoikiasiapp {
                System.out.println("Tha thelate na noikasete auth thn tainia? y/n");
                answer = in.nextLine();
                if (answer.equals("y")) {
-                  if (data.prosenoik.get(pos).getTemaxia > 0) {
+                  if (data.prosenoik.get(pos).getTemaxia() > 0) {
                      System.out.println("Doste onomateponimo string");
                      onoma = in.nextLine();
                      System.out.println("Doste thlefono integer");
@@ -126,6 +150,8 @@ public class Enoikiasiapp {
                      kostosenoik = in.nextDouble();
                      System.out.println("Doste extra kostos double");
                      extrakostos = in.nextDouble();
+                     data.prosenoik.get(pos).setXronosEnoikiasis(1);
+                     
 
                      data.noikiasmena.add(data.prosenoik.get(pos));
                      System.out.println(data.noikiasmena.get(0));
@@ -137,6 +163,7 @@ public class Enoikiasiapp {
                      data.noikiasmena.get(tmp1).setHmeromhniaEnoikiasis(hmeromhnia);
                      data.noikiasmena.get(tmp1).setKostosEnoikiasis(kostosenoik);
                      data.noikiasmena.get(tmp1).setExtraDayKostos(extrakostos);
+                     data.noikiasmena.get(tmp1).setTelikoKostos(kostosenoik+(hmeres-data.prosenoik.get(pos).getXronosenoikiasis())*extrakostos);
                      data.noikiastike(pos);// meivsh apothematos kata ena.
 
                   } else {

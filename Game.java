@@ -2,10 +2,10 @@ public class Game extends Enoikiasi
 {
 	public Game(String platforma,String etairia,
 				String etosparagvghs, String titlos,
-				String xronosenoikiasis, Integer temaxia,
-				String onomaPelati, Integer thlefPelati,
+				Integer xronosenoikiasis, Integer temaxia,
+				String onomaPelati, Long thlefPelati,
 				Integer imeresEnoikiasis, Integer hmeromhniaEnoikiasis,
-				double kostosEnoikiasis, double extraDayKostos, String katigoria)
+				double kostosEnoikiasis, double extraDayKostos, String katigoria, Double telikoKostos)
 	{
 
 
@@ -14,7 +14,7 @@ public class Game extends Enoikiasi
 				xronosenoikiasis,  temaxia,
 				 onomaPelati,  thlefPelati,
 				imeresEnoikiasis,  hmeromhniaEnoikiasis,
-				 kostosEnoikiasis, extraDayKostos, katigoria);
+				 kostosEnoikiasis, extraDayKostos, katigoria, telikoKostos);
 
 	}
 	

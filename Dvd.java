@@ -7,10 +7,10 @@ public class Dvd extends Enoikiasi
 
 	public Dvd(String platforma,String etairia,
 				String etosparagvghs, String titlos,
-				String xronosenoikiasis, Integer temaxia,
+				Integer xronosenoikiasis, Integer temaxia,
 				String onomaPelati, Long thlefPelati,
 				Integer imeresEnoikiasis, Integer hmeromhniaEnoikiasis,
-				double kostosEnoikiasis,double extraDayKostos, String katigoria,
+				double kostosEnoikiasis,double extraDayKostos, String katigoria, Double telikoKostos,
 				String skinothetis, String senariografos,
 				String ithopoioi, Integer diarkeia)
 	{
@@ -20,7 +20,7 @@ public class Dvd extends Enoikiasi
 				xronosenoikiasis,  temaxia,
 				 onomaPelati,  thlefPelati,
 				imeresEnoikiasis,  hmeromhniaEnoikiasis,
-				 kostosEnoikiasis, extraDayKostos, katigoria);
+				 kostosEnoikiasis, extraDayKostos, katigoria, telikoKostos);
 		
 		this.skinothetis=skinothetis;
 		this.senariografos=senariografos;
