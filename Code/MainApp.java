@@ -133,17 +133,7 @@ public class MainApp
             
             answer2 = in.nextLine();
          
-            OrisePlatforma(answer2,platforma);
-            System.out.println(platforma);
-            
-
-            /*if (answer2.equals("1")) {
-               platforma = "playstation";
-            } else if (answer2.equals("2")) {
-               platforma = "xbox";
-            } else if (answer2.equals("3")) {
-               platforma = "nintendo";
-            }*/
+            platforma=OrisePlatforma(answer2,platforma);
 
             System.out.println("Onoma paixnidiou?");
             name = in.nextLine();
@@ -223,7 +213,8 @@ public static void ShowGameConsole()
 }
 public static String OrisePlatforma(String answer2,String platforma)
 {
-   /*if (answer2.equals("1")) 
+   
+   if (answer2.equals("1")) 
    {
       platforma = "playstation";
    } 
@@ -234,9 +225,7 @@ public static String OrisePlatforma(String answer2,String platforma)
    else if (answer2.equals("3")) 
    {
       platforma = "nintendo";
-   }*/
-   platforma="nintendo";
-   System.out.println(platforma);
+   }
    return platforma;
 }
 
