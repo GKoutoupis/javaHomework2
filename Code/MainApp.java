@@ -32,7 +32,7 @@ public class MainApp
       Scanner in = new Scanner(System.in);
       Database data = new Database();
       
-   
+      //arxikopoihsh ths listas data.prosenoik
       data.prosenoik.add(dvd1);
       data.prosenoik.add(dvd2);
       data.prosenoik.add(dvd3);
@@ -59,6 +59,9 @@ public class MainApp
       String platforma = null;
       Double telikoKostos;
       Integer xronia;
+      Integer diathesimatemaxia;
+
+      data.ShowAll();
 
       while (!done) {
          ShowChoices();
@@ -77,25 +80,23 @@ public class MainApp
                System.out.println("Tha thelate na noikasete auth thn tainia? y/n");
                answer = in.nextLine();
                if (answer.equals("y")) {
-                  if (data.prosenoik.get(pos).getTemaxia() > 0) {
+
+                  diathesimatemaxia=data.prosenoik.get(pos).getTemaxia();
+                  if (diathesimatemaxia > 0) {
                      System.out.println("Doste onomateponimo (string)");
                      onoma = in.nextLine();
                      System.out.println("Doste thlefono (integer)");
                      thlefono = in.nextLong();
-                     System.out.println("Doste hmeromhnia enoikiasis (string)"); 
+                     System.out.println("Doste hmeromhnia enoikiasis (integer)"); 
                      hmeromhnia = in.nextInt();
                      System.out.println("Doste hmeres enoikiasis (integer)");
                      hmeres = in.nextInt();
                      System.out.println("Doste kostosenoik (double)");
                      kostosenoik = in.nextDouble();
-                     System.out.println("Doste extra kostos (double)");
+                     System.out.println("Doste extra kostos gia kathisterisi epistrofis (double)");
                      extrakostos = in.nextDouble();
-                     if (answer2.equals("2")||((answer2.equals("1"))&&data.prosenoik.get(pos).getEtosparagvghs()=="2019")){
-                        data.prosenoik.get(pos).setXronosEnoikiasis(1);
-                     } else { 
-                        data.prosenoik.get(pos).setXronosEnoikiasis(7);
-                     }
-                     
+
+                     SetXronoEnoik(platforma,pos,data);
                      data.noikiasmena.add(data.prosenoik.get(pos));
                      System.out.println(data.noikiasmena.get(0));
                      tmp1 = data.noikiasmena.size();
@@ -111,6 +112,7 @@ public class MainApp
                      data.noikiasmena.get(tmp1).setTelikoKostos(kostosenoik+(hmeres-data.prosenoik.get(pos).getXronosenoikiasis())*extrakostos);
                      // meivsh apothematos kata ena.
                      data.noikiastike(pos);
+                     data.ShowAll();                  
                   } else {
                      System.out.println("Den einai diathesimo");
                   }
@@ -132,7 +134,8 @@ public class MainApp
                System.out.println("Tha thelate na noikasete auth thn tainia? y/n");
                answer = in.nextLine();
                if (answer.equals("y")) {
-                  if (data.prosenoik.get(pos).getTemaxia() > 0) {
+                  diathesimatemaxia=data.prosenoik.get(pos).getTemaxia();
+                  if (diathesimatemaxia > 0) {
                      System.out.println("Doste onomateponimo string");
                      onoma = in.nextLine();
                      System.out.println("Doste thlefono integer");
@@ -190,7 +193,7 @@ public static  void ShowChoices()
    System.out.println("3. Exit"); 
 }
 
-
+//epilego an einai playstation nintendo h xbox
 public static String SelectPaixnidomixani(Scanner in,String platforma)
 {  String answer2="-1";
    System.out.println("\n1. for Playstation");
@@ -226,7 +229,16 @@ public static String SelectDVDorCD(Scanner in, String platforma)
             }
    return platforma;
 }            
-
+public static void SetXronoEnoik(String platforma,Integer pos, Database data){
+                     if (platforma.equals("blue-ray")||(platforma.equals("dvd"))&&data.prosenoik.get(pos).getEtosparagvghs()=="2019")
+                     {
+                        data.prosenoik.get(pos).setXronosEnoikiasis(1);
+                     } 
+                     else 
+                     { 
+                        data.prosenoik.get(pos).setXronosEnoikiasis(7);
+                     }
+}
 
 
 }//telos Mainapp

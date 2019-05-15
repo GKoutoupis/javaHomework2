@@ -43,5 +43,24 @@ public class Database
 		}
 	return false;
 	}
+	public void ShowAllProsEnoik()
+	{	
+		System.out.println("katalogos pros enoikiasi");
+		for (Enoikiasi obj:prosenoik ) {
+         System.out.println(obj);
+      }
+	}
+	public void ShowAllNoikiasmena()
+	{
+		System.out.println("katalogos me ta noikiasmena");
+		for (Enoikiasi obj:noikiasmena ) {
+			System.out.println(obj.toString2());
+			
+		}
+	}
+	public void ShowAll(){
+		ShowAllProsEnoik();
+		ShowAllNoikiasmena();
+	}
 
 }
