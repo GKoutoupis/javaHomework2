@@ -122,7 +122,8 @@ public class MainApp
                      System.out.println("Den einai diathesimo");
                   }
                }
-            } else {
+            } else 
+            {
                System.out.println("\nDen uparxei auth h tainia gia auth thn platforma");
             }
          }
@@ -131,8 +132,9 @@ public class MainApp
             ShowGameConsole();
             
             answer2 = in.nextLine();
-            OrisePlatforma plat=new OrisePlatforma();
-            plat(answer2);
+         
+            OrisePlatforma(answer2,platforma);
+            System.out.println(platforma);
             
 
             /*if (answer2.equals("1")) {
@@ -199,7 +201,8 @@ public class MainApp
             done = true;
          }
       }
-   }
+   }//telos main
+
 public static  void ShowChoices()
 {
    System.out.println("\n0. Episkopisi diathesimvn tainivn");
@@ -218,7 +221,7 @@ public static void ShowGameConsole()
    System.out.println("2. for Xbox");
    System.out.println("3. for Nintendo");
 }
-public String OrisePlatforma(String answer2,String platforma)
+public static String OrisePlatforma(String answer2,String platforma)
 {
    /*if (answer2.equals("1")) 
    {
@@ -233,7 +236,8 @@ public String OrisePlatforma(String answer2,String platforma)
       platforma = "nintendo";
    }*/
    platforma="nintendo";
+   System.out.println(platforma);
    return platforma;
 }
 
-}
+}//telos Mainapp
