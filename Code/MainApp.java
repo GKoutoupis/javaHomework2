@@ -31,6 +31,15 @@ public class MainApp {
       Database data = new Database();
       data.prosenoik.add(dvd1);
       data.prosenoik.add(dvd2);
+      data.prosenoik.add(dvd3);
+      data.prosenoik.add(dvd4);
+      data.prosenoik.add(game1);
+      data.prosenoik.add(game2);
+      data.prosenoik.add(game3);
+      data.prosenoik.add(game4);
+      data.prosenoik.add(game5);
+      data.prosenoik.add(game6);
+     
       boolean done = false;
       String answer;
       String answer2;
@@ -48,15 +57,12 @@ public class MainApp {
       Integer xronia;
 
       while (!done) {
-         System.out.println("\n0. Episkopisi diathesimvn tainivn");
-         System.out.println("1.Episkopisi diathesimvn paixnidivn");
-         System.out.println("2.Episkopisi enoikiasevn");
-         System.out.println("3. Exit");
+         ShowChoices();
 
          answer = in.nextLine();
-         if (answer.equals("0")) {
-            System.out.println("\n1. for dvd");
-            System.out.println("2. for blue-ray");
+         if (answer.equals("0")) 
+         {
+            SelectDvdOrCD();
             answer2 = in.nextLine();
 
             if (answer2.equals("1")) {
@@ -115,7 +121,9 @@ public class MainApp {
             } else {
                System.out.println("\nDen uparxei auth h tainia gia auth thn platforma");
             }
-         } else if (answer.equals("1")) {
+         }
+         else if (answer.equals("1")) 
+         {
             System.out.println("\n1. for Playstation");
             System.out.println("2. for Xbox");
             System.out.println("3. for Nintendo");
@@ -173,15 +181,29 @@ public class MainApp {
             } else {
                System.out.print("\nDen uparxei auto to paixnidi gia auth thn platforma");
             }
-         } else if (answer.equals("2")) {
+         } 
+         else if (answer.equals("2")) 
+         {
             for (int i = 0; i < data.noikiasmena.size(); i++) {
                System.out.print(data.noikiasmena.get(i).toString2() + "\n ---------------------------------");
             }
-         } else if (answer.equals("3")) {
+         } 
+         else if (answer.equals("3")) 
+         {
             done = true;
-
          }
       }
    }
-
+public static  void ShowChoices()
+{
+   System.out.println("\n0. Episkopisi diathesimvn tainivn");
+   System.out.println("1.Episkopisi diathesimvn paixnidivn");
+   System.out.println("2.Episkopisi enoikiasevn");
+   System.out.println("3. Exit"); 
+}
+public static void SelectDvdOrCD()
+{
+   System.out.println("\n1. for dvd");
+   System.out.println("2. for blue-ray");
+}
 }
