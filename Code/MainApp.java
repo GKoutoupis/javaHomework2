@@ -1,7 +1,9 @@
 import java.util.*;
 
-public class MainApp {
-   public static void main(String[] args) {
+public class MainApp
+{
+   public static void main(String[] args) 
+   {
 
       // Lista Pros Enoikiasi
       Dvd dvd1 = new Dvd("dvd", "finos film", "1995", "DVD", 1, 5, "onomaPelati", 6900000000L/* thlefPelati */,
@@ -29,6 +31,8 @@ public class MainApp {
 
       Scanner in = new Scanner(System.in);
       Database data = new Database();
+      
+   
       data.prosenoik.add(dvd1);
       data.prosenoik.add(dvd2);
       data.prosenoik.add(dvd3);
@@ -39,7 +43,7 @@ public class MainApp {
       data.prosenoik.add(game4);
       data.prosenoik.add(game5);
       data.prosenoik.add(game6);
-     
+      
       boolean done = false;
       String answer;
       String answer2;
@@ -123,19 +127,21 @@ public class MainApp {
             }
          }
          else if (answer.equals("1")) 
-         {
-            System.out.println("\n1. for Playstation");
-            System.out.println("2. for Xbox");
-            System.out.println("3. for Nintendo");
+         {  
+            ShowGameConsole();
+            
             answer2 = in.nextLine();
+            OrisePlatforma plat=new OrisePlatforma();
+            plat(answer2);
+            
 
-            if (answer2.equals("1")) {
+            /*if (answer2.equals("1")) {
                platforma = "playstation";
             } else if (answer2.equals("2")) {
                platforma = "xbox";
             } else if (answer2.equals("3")) {
                platforma = "nintendo";
-            }
+            }*/
 
             System.out.println("Onoma paixnidiou?");
             name = in.nextLine();
@@ -206,4 +212,28 @@ public static void SelectDvdOrCD()
    System.out.println("\n1. for dvd");
    System.out.println("2. for blue-ray");
 }
+public static void ShowGameConsole()
+{
+   System.out.println("\n1. for Playstation");
+   System.out.println("2. for Xbox");
+   System.out.println("3. for Nintendo");
+}
+public String OrisePlatforma(String answer2,String platforma)
+{
+   /*if (answer2.equals("1")) 
+   {
+      platforma = "playstation";
+   } 
+   else if (answer2.equals("2")) 
+   {
+      platforma = "xbox";
+   } 
+   else if (answer2.equals("3")) 
+   {
+      platforma = "nintendo";
+   }*/
+   platforma="nintendo";
+   return platforma;
+}
+
 }

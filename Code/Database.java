@@ -12,10 +12,11 @@ public class Database
 	Integer tmp;
 	Integer temaxia;
 
-	public void noikiastike(Integer pos)//otan noikiastei kati apo ton katalog o meivnei ta diatheima temaxia kata ena
+	public void noikiastike(Integer pos)//otan noikiastei kati apo ton katalogo meivnei ta diathesima temaxia kata ena
 	{	tmp=prosenoik.get(pos).getTemaxia();
 		prosenoik.get(pos).setTemaxia(tmp-1);
 	}
+	//vriskei se poia thesi sti lista vrisketai ena antikeimeno
 	public Integer positionfinder(String theName, String platforma)
 	{
 		for (Enoikiasi e: prosenoik)
