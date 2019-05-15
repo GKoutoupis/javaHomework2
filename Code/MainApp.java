@@ -174,7 +174,10 @@ public class MainApp
          } 
          else if (answer.equals("2")) 
          {  
-            ChooseNoikismenoInfo(in, data,tmp1);
+           pos= ChooseNoikiasmenoInfo(in, data,tmp1);
+           name=data.noikiasmena.get(pos).getTitlos();
+           platforma=data.noikiasmena.get(pos).getPlatforma();
+            Xenoikiasi(in,name, platforma,data);
          } 
          else if (answer.equals("3")) 
          {
@@ -183,6 +186,7 @@ public class MainApp
       }
    }//telos main
 
+//deixnei tis epiloges ths diepafhs
 public static  void ShowChoices()
 {
    System.out.println("\n0. Episkopisi diathesimvn tainivn");
@@ -193,7 +197,8 @@ public static  void ShowChoices()
 
 //epilego an einai playstation nintendo h xbox
 public static String SelectPaixnidomixani(Scanner in,String platforma)
-{  String answer2="-1";
+{  
+   String answer2="-1";
    System.out.println("\n1. for Playstation");
    System.out.println("2. for Xbox");
    System.out.println("3. for Nintendo");
@@ -214,7 +219,8 @@ public static String SelectPaixnidomixani(Scanner in,String platforma)
 }
 //dialego an tha einai CD h dvd
 public static String SelectDVDorCD(Scanner in, String platforma)
-{  String answer2="-1";
+{  
+   String answer2="-1";
    System.out.println("\n1. for dvd");
    System.out.println("2. for blue-ray");
    answer2 = in.nextLine();
@@ -227,7 +233,8 @@ public static String SelectDVDorCD(Scanner in, String platforma)
             }
    return platforma;
 }            
-public static void SetXronoEnoik(String platforma,Integer pos, Database data){
+public static void SetXronoEnoik(String platforma,Integer pos, Database data)
+{
                      if (platforma.equals("blue-ray")||(platforma.equals("dvd"))&&data.prosenoik.get(pos).getEtosparagvghs()=="2019")
                      {
                         data.prosenoik.get(pos).setXronosEnoikiasis(1);
@@ -237,13 +244,23 @@ public static void SetXronoEnoik(String platforma,Integer pos, Database data){
                         data.prosenoik.get(pos).setXronosEnoikiasis(7);
                      }
 }
-public static void ChooseNoikismenoInfo(Scanner in,Database data, Integer tmp1)
+public static Integer ChooseNoikiasmenoInfo(Scanner in,Database data, Integer tmp1)
             { 
                System.out.println("Poion arithmo enoikiasis thelete???");
                System.out.println("Dialexte apo 1 ews  "+data.noikiasmena.size());
                tmp1=in.nextInt();
-               System.out.println(data.noikiasmena.get(tmp1-1).toString2());
+               tmp1--;
+               System.out.println(data.noikiasmena.get(tmp1).toString2());
+               return tmp1;
             }
 
+public static void Xenoikiasi(Scanner in,String name, String platforma, Database data)
+{  Integer pos;
+   System.out.println("Thelete na xenoikiasete? (y/n)");
+   if (in.nextLine().equals("y")) {
+      pos=data.positionfinder(name,platforma);
+      data.xenoikiastike(pos);
 
+   }
+}
 }//telos Mainapp

@@ -16,6 +16,11 @@ public class Database
 	{	tmp=prosenoik.get(pos).getTemaxia();
 		prosenoik.get(pos).setTemaxia(tmp-1);
 	}
+	public void xenoikiastike(Integer pos)
+	{
+		tmp=prosenoik.get(pos).getTemaxia();
+		prosenoik.get(pos).setTemaxia(10);
+	}
 	//vriskei se poia thesi sti lista vrisketai ena antikeimeno
 	public Integer positionfinder(String theName, String platforma)
 	{
