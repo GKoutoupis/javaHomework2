@@ -55,7 +55,7 @@ public class MainApp
       double kostosenoik;
       double extrakostos;
       Integer pos;
-      Integer tmp1;
+      Integer tmp1=10;
       String platforma = null;
       Double telikoKostos;
       Integer xronia;
@@ -173,10 +173,8 @@ public class MainApp
             }
          } 
          else if (answer.equals("2")) 
-         {
-            for (int i = 0; i < data.noikiasmena.size(); i++) {
-               System.out.print(data.noikiasmena.get(i).toString2() + "\n ---------------------------------");
-            }
+         {  
+            ChooseNoikismenoInfo(in, data,tmp1);
          } 
          else if (answer.equals("3")) 
          {
@@ -239,6 +237,13 @@ public static void SetXronoEnoik(String platforma,Integer pos, Database data){
                         data.prosenoik.get(pos).setXronosEnoikiasis(7);
                      }
 }
+public static void ChooseNoikismenoInfo(Scanner in,Database data, Integer tmp1)
+            { 
+               System.out.println("Poion arithmo enoikiasis thelete???");
+               System.out.println("Dialexte apo 1 ews  "+data.noikiasmena.size());
+               tmp1=in.nextInt();
+               System.out.println(data.noikiasmena.get(tmp1-1).toString2());
+            }
 
 
 }//telos Mainapp
