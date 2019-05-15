@@ -1,6 +1,6 @@
-public class Enoikiasi extends Object
+public class Enoikiasi
 {
-	private String katigoria;//blue-ray/dvd/xbox/playstation/nintendo
+	private String platforma;//blue-ray/dvd/xbox/playstation/nintendo
 	private String etairia;
 	private String etosparagvghs;
 	private String titlos;
@@ -13,15 +13,16 @@ public class Enoikiasi extends Object
 	private Integer hmeromhniaEnoikiasis=-1;
 	private double kostosEnoikiasis=-1.0;
 	private double extraDayKostos=-1.0;
+	private String katigoria;
 
-	public Enoikiasi (String katigoria,String etairia,
+	public Enoikiasi (String platforma,String etairia,
 				String etosparagvghs, String titlos,
 				String xronosenoikiasis, Integer temaxia,
 				String onomaPelati, Integer thlefPelati,
 				Integer imeresEnoikiasis, Integer hmeromhniaEnoikiasis,
-				double kostosEnoikiasis,double extraDayKostos)
+				double kostosEnoikiasis, double extraDayKostos, String katigoria)
 	{
-		this.katigoria=katigoria;
+		this.platforma=platforma;
 		this.etairia=etairia;
 		this.etosparagvghs=etosparagvghs;
 		this.titlos=titlos;
@@ -33,6 +34,7 @@ public class Enoikiasi extends Object
 		this.hmeromhniaEnoikiasis=hmeromhniaEnoikiasis;
 		this.kostosEnoikiasis=kostosEnoikiasis;
 		this.extraDayKostos=extraDayKostos;
+		this.katigoria=katigoria;
 
 	}
 	public void setTemaxia(Integer temaxia)
@@ -63,6 +65,10 @@ public class Enoikiasi extends Object
 	{
 		this.extraDayKostos=extraDayKostos;
 	}
+	public String getPlatforma()
+	{
+		return platforma;
+	}
 	public String getKatigoria()
 	{
 		return katigoria;
@@ -87,5 +93,5 @@ public class Enoikiasi extends Object
 	{
 		return temaxia;
 	}
-
+	
 }
