@@ -46,7 +46,7 @@ public class MainApp
       
       boolean done = false;
       String answer;
-      String answer2;
+      String answer2="-1";
       String name;
       String onoma;
       Long thlefono;
@@ -66,14 +66,7 @@ public class MainApp
          answer = in.nextLine();
          if (answer.equals("0")) 
          {
-            SelectDvdOrCD();
-            answer2 = in.nextLine();
-
-            if (answer2.equals("1")) {
-               platforma = "dvd";
-            } else if (answer2.equals("2")) {
-               platforma = "blue-ray";
-            }
+            platforma=SelectDVDorCD(in,platforma);
 
             System.out.println("Onoma tainias?");
             name = in.nextLine();
@@ -129,12 +122,8 @@ public class MainApp
          }
          else if (answer.equals("1")) 
          {  
-            ShowGameConsole();
+            platforma=SelectPaixnidomixani(in,platforma);
             
-            answer2 = in.nextLine();
-         
-            platforma=OrisePlatforma(answer2,platforma);
-
             System.out.println("Onoma paixnidiou?");
             name = in.nextLine();
             if (data.booleanfinder(name, platforma)) {
@@ -200,20 +189,14 @@ public static  void ShowChoices()
    System.out.println("2.Episkopisi enoikiasevn");
    System.out.println("3. Exit"); 
 }
-public static void SelectDvdOrCD()
-{
-   System.out.println("\n1. for dvd");
-   System.out.println("2. for blue-ray");
-}
-public static void ShowGameConsole()
-{
+
+
+public static String SelectPaixnidomixani(Scanner in,String platforma)
+{  String answer2="-1";
    System.out.println("\n1. for Playstation");
    System.out.println("2. for Xbox");
    System.out.println("3. for Nintendo");
-}
-public static String OrisePlatforma(String answer2,String platforma)
-{
-   
+   answer2=in.nextLine();
    if (answer2.equals("1")) 
    {
       platforma = "playstation";
@@ -228,5 +211,22 @@ public static String OrisePlatforma(String answer2,String platforma)
    }
    return platforma;
 }
+//dialego an tha einai CD h dvd
+public static String SelectDVDorCD(Scanner in, String platforma)
+{  String answer2="-1";
+   System.out.println("\n1. for dvd");
+   System.out.println("2. for blue-ray");
+   answer2 = in.nextLine();
+   if (answer2.equals("1")) {
+               platforma = "dvd";
+            } 
+   else if (answer2.equals("2")) 
+            {
+               platforma = "blue-ray";
+            }
+   return platforma;
+}            
+
+
 
 }//telos Mainapp
