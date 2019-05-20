@@ -20,6 +20,7 @@ public class Database
 	{
 		tmp=prosenoik.get(pos).getTemaxia();
 		prosenoik.get(pos).setTemaxia(10);
+		// !!!edv einai to provlima an etrexe svsta tha eprepe na perasei deka temaxia sta pros enoikiasi alla den dinei tipota!
 	}
 	//vriskei se poia thesi sti lista vrisketai ena antikeimeno
 	public Integer positionfinder(String theName, String platforma)
