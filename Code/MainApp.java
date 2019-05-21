@@ -1,32 +1,32 @@
 import java.util.*;
-
+import java.io.*;
 public class MainApp
 {
    public static void main(String[] args) 
    {
 
       // Lista Pros Enoikiasi
-      Dvd dvd1 = new Dvd("dvd", "finos film", "1995", "DVD", 1, 5, "onomaPelati", 6900000000L/* thlefPelati */,
+      Enoikiasi dvd1 = new Dvd("dvd", "finos film", "1995", "DVD", 1, 5, "onomaPelati", 6900000000L/* thlefPelati */,
             150/* hmeres enoikiasis */, 45/* hmeromhnia enoikiasis */, 3.7/* kostos enoikiasis */,
             4.5/* extra day kostos */, "komodia",0.0, "skinotheths", "senariografos", "ithopoioi", 120/* diarkeia */);
-      Dvd dvd2 = new Dvd("blue-ray", "finos film", "1995", "BR", 1, 5, "onomaPelati", 6971234567L, 150, 45, 3.7, 4.5,
+      Enoikiasi dvd2 = new Dvd("blue-ray", "finos film", "1995", "BR", 1, 5, "onomaPelati", 6971234567L, 150, 45, 3.7, 4.5,
             "komodia",0.0, "aaaa", "aaa", "aaa", 120);
-      Dvd dvd3 = new Dvd("dvd", "lucasarts", "1977", "Star Wars", 7, 5, "onomaPelati", 6998979695L, 7, 1411, 3.7, 1,
+     Enoikiasi dvd3 = new Dvd("dvd", "lucasarts", "1977", "Star Wars", 7, 5, "onomaPelati", 6998979695L, 7, 1411, 3.7, 1,
             "sci-fi",0.0, "Lucas", "Lucas", "Carrie Fisher,Mark Hamill,Harrison Ford", 121);
-      Dvd dvd4 = new Dvd("blue-ray", "New Line Cinema", "2003","Return of the King", 1, 5,
+      Enoikiasi dvd4 = new Dvd("blue-ray", "New Line Cinema", "2003","Return of the King", 1, 5,
            "onomaPelati", 698988878685L, 7, 208, 3.7, 4.5, "adventure,sci-fi",0.0, "Peter Jackson", "J.R.R Tolkien",
           "Elijah Wood,Viggo Mortensen,Ian McKellen", 201);
-      Game game1 = new Game("nintendo", "nintendo", "1996", "Pokemon Blue", 7, 20, "onomaPelati", 6979787675L, 7,
+      Enoikiasi game1 = new Game("nintendo", "nintendo", "1996", "Pokemon Blue", 7, 20, "onomaPelati", 6979787675L, 7,
             1011, 2.5, 3.0, "Rpg",0.0);
-      Game game2 = new Game("nintendo", "nintendo", "1983", "Super Mario Bros", 7, 20, "onomaPelati", 6969686766L,
+      Enoikiasi game2 = new Game("nintendo", "nintendo", "1983", "Super Mario Bros", 7, 20, "onomaPelati", 6969686766L,
             7, 305, 2.5, 3.0, "Arcade",0.0);
-      Game game3 = new Game("Playstation", "Ubisoft", "2000", "Prince of Persia Sands of Time", 7, 2001,
+      Enoikiasi game3 = new Game("Playstation", "Ubisoft", "2000", "Prince of Persia Sands of Time", 7, 2001,
             "onomaPelati", 6959585756L, 7, 282, 2.5, 3.0, "Adventure,Action",0.0);
-      Game game4 = new Game("Playstation", "Bethesda", "2011", "Skyrim", 7, 202, "onomaPelati", 6949484746L, 60, 216,
+      Enoikiasi game4 = new Game("Playstation", "Bethesda", "2011", "Skyrim", 7, 202, "onomaPelati", 6949484746L, 60, 216,
             2.5, 3.0, "RPG,Adventure",0.0);
-      Game game5 = new Game("Xbox", "Microsoft", "2001", "Halo", 7, 4, "onomaPelati", 6939383736L, 7, 34, 2.5, 3.0,
+      Enoikiasi game5 = new Game("Xbox", "Microsoft", "2001", "Halo", 7, 4, "onomaPelati", 6939383736L, 7, 34, 2.5, 3.0,
             "Shooting,Adventure",0.0);
-      Game game6 = new Game("Xbox", "Microsoft", "2018", "Sea of Thieves", 7, 18, "onomaPelati", 6929282726L, 7, 45,
+      Enoikiasi game6 = new Game("Xbox", "Microsoft", "2018", "Sea of Thieves", 7, 18, "onomaPelati", 6929282726L, 7, 45,
             2.5, 3.0, "MMO",0.0);
 
       Scanner in = new Scanner(System.in);
@@ -183,6 +183,10 @@ public class MainApp
          {
             done = true;
          }
+         else if (answer.equals("4"))//dokimi gia thn synarthsh gia ektypvsh
+         {
+            CreateFileProsEnoik(data);
+         }
       }
    }//telos main
 
@@ -261,6 +265,104 @@ public static void Xenoikiasi(Scanner in,String name, String platforma, Database
       pos=data.positionfinder(name,platforma);
       data.xenoikiastike(pos);
 
+   }
+}
+public static void CreateFileProsEnoik(Database data)//write data from list to file
+{
+   System.out.println(" >>>>>>> Write data from ARRAYLIST to FILE...");
+   FileWriter writer=null;
+
+   try
+   {
+      writer=new FileWriter(new File("products.txt"));
+      writer.write("ITEM_LIST" +"\n");
+      for(Enoikiasi item: data.prosenoik)
+      {
+         if (item instanceof Dvd) 
+         {
+            writer.write(
+               "\t" +"ITEM"+"\n"+
+               "\t"+"{"+"\n"+
+               "\t" +"\t"+"ITEM_TYPE "+ "DVD"+"\n"+
+               "\t"+"\t"+ "SUB_TYPE"+ ((Dvd) item).getPlatforma()+"\n"+
+               "\t"+"\t"+"TITLE"+ ((Dvd) item).getTitlos()+"\n"+
+               "\t"+"\t"+"YEAR" + ((Dvd) item).getEtosparagvghs()+"\n"+
+               "\t"+"\t"+"CAST" + ((Dvd) item).getIthopoioi()+"\n"+
+                "\t"+"\t"+ "DIRECTOR" + ((Dvd) item).getSkinothetis()+"\n"+
+               "\t"+"\t"+"CATEGORY" +((Dvd) item).getKatigoria()+"\n"+
+               "\t"+"\t"+ "COPIES" + ((Dvd) item).getTemaxia()+"\n"+
+               "\t"+"}"+"\n"  );    
+         }
+         else if (item instanceof Game) 
+         {
+              writer.write(
+               "\t" +"ITEM"+"\n"+
+               "\t"+"{"+"\n"+
+               "\t" +"\t"+"ITEM_TYPE "+ "game"+"\n"+
+               "\t"+"\t"+"TITLE"+ ((Game) item).getTitlos()+"\n"+
+               "\t"+"\t"+"COMPANY" + ((Game) item).getEtairia()+"\n"+
+               "\t"+"\t"+"PLATFORM" + ((Game) item).getPlatforma()+"\n"+
+               "\t"+"\t"+ "COPIES" + ((Game) item).getTemaxia()+"\n"+
+               "\t"+"}"+"\n"  );  
+         }//game
+      
+      }//for      
+      writer.close();
+      System.out.println(">>>>>>>>>>>>End writing files");
+   }//try
+   catch(IOException e)
+   {
+      System.err.println("Error"+e.getMessage());
+   }
+}
+public static void CreateFileEnoikiaseis(Database data)//write data from list to file
+{
+   System.out.println(" >>>>>>> Write data from ARRAYLIST to FILE...");
+   FileWriter writer=null;
+
+   try
+   {
+      writer= new FileWriter(new File("products.txt"));
+      writer.write("RENTAL_LIST" +"\n");
+      for(Enoikiasi item: data.noikiasmena)
+      {
+         if (item instanceof Dvd) 
+         {
+            writer.write(
+               "\t" +"RENTAL"+"\n"+
+               "\t"+"{"+"\n"+
+               "\t" +"\t"+"ITEM_TYPE "+ "movie"+"\n"+
+               "\t"+"\t"+ "SUB_TYPE"+ ((Dvd) item).getPlatforma()+"\n"+
+               "\t"+"\t"+"TITLE"+ ((Dvd) item).getTitlos()+"\n"+
+               "\t"+"\t"+"NAME"+ ((Dvd) item).getOnomaPelati()+"\n"+
+               "\t"+"\t"+"DATE"+ ((Dvd) item).getHmeromhniaEnoikiasis()+"\n"+
+               "\t"+"\t"+"YEAR" + ((Dvd) item).getEtosparagvghs()+"\n"+
+               "\t"+"\t"+"CAST" + ((Dvd) item).getIthopoioi()+"\n"+
+               "\t"+"\t"+ "DIRECTOR" + ((Dvd) item).getSkinothetis()+"\n"+
+               "\t"+"\t"+"CATEGORY" +((Dvd) item).getKatigoria()+"\n"+
+               "\t"+"}"+"\n"  );    
+         }
+         else if (item instanceof Game) 
+         {
+              writer.write(
+               "\t" +"RENTAL"+"\n"+
+               "\t"+"{"+"\n"+
+               "\t" +"\t"+"ITEM_TYPE "+ "game"+"\n"+
+               "\t"+"\t"+"TITLE"+ ((Game) item).getTitlos()+"\n"+
+               "\t"+"\t"+"COMPANY" + ((Game) item).getEtairia()+"\n"+
+               "\t"+"\t"+"PLATFORM" + ((Game) item).getPlatforma()+"\n"+
+               "\t"+"\t"+"NAME"+ ((Game) item).getOnomaPelati()+"\n"+
+               "\t"+"\t"+"DATE"+((Game) item).getHmeromhniaEnoikiasis()+"\n"+
+               "\t"+"\t"+"COMPANY" + ((Game) item).getEtairia()+"\n"+
+               "\t"+"}"+"\n"  );  
+         }
+        
+      }//FOR      
+       writer.close();
+   }//try
+   catch(IOException e)
+   {
+      System.err.println("Error");
    }
 }
 }//telos Mainapp
