@@ -1,0 +1,93 @@
+ITEM_LIST
+	ITEM
+	{
+		ITEM_TYPE DVD
+		SUB_TYPEdvd
+		TITLEDVD
+		YEAR1995
+		CASTithopoioi
+		DIRECTORskinotheths
+		CATEGORYkomodia
+		COPIES5
+	}
+	ITEM
+	{
+		ITEM_TYPE DVD
+		SUB_TYPEblue-ray
+		TITLEBR
+		YEAR1995
+		CASTaaa
+		DIRECTORaaaa
+		CATEGORYkomodia
+		COPIES5
+	}
+	ITEM
+	{
+		ITEM_TYPE DVD
+		SUB_TYPEdvd
+		TITLEStar Wars
+		YEAR1977
+		CASTCarrie Fisher,Mark Hamill,Harrison Ford
+		DIRECTORLucas
+		CATEGORYsci-fi
+		COPIES5
+	}
+	ITEM
+	{
+		ITEM_TYPE DVD
+		SUB_TYPEblue-ray
+		TITLEReturn of the King
+		YEAR2003
+		CASTElijah Wood,Viggo Mortensen,Ian McKellen
+		DIRECTORPeter Jackson
+		CATEGORYadventure,sci-fi
+		COPIES5
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLEPokemon Blue
+		COMPANYnintendo
+		PLATFORMnintendo
+		COPIES20
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLESuper Mario Bros
+		COMPANYnintendo
+		PLATFORMnintendo
+		COPIES20
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLEPrince of Persia Sands of Time
+		COMPANYUbisoft
+		PLATFORMPlaystation
+		COPIES2001
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLESkyrim
+		COMPANYBethesda
+		PLATFORMPlaystation
+		COPIES202
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLEHalo
+		COMPANYMicrosoft
+		PLATFORMXbox
+		COPIES4
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLESea of Thieves
+		COMPANYMicrosoft
+		PLATFORMXbox
+		COPIES18
+	}
