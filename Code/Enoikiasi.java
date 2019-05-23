@@ -38,6 +38,15 @@ public class Enoikiasi
 		this.katigoria=katigoria;
 		this.telikoKostos=telikoKostos;
 
+		
+	}
+	public void setTitlos(String titlos)	
+	{
+		this.titlos=titlos;
+	}
+	public void setPlatforma(String platforma)
+	{
+		this.platforma=platforma;
 	}
 	public void setTemaxia(Integer temaxia)
 	{
