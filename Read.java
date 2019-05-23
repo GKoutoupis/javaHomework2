@@ -3,12 +3,12 @@ import java.util.*;
 
 public class ReadITEMFile {
 	
-	private ArrayList <ITEM> ITEM_LIST = new Arraylist<ITEM>();
+	private ArrayList <Enoikiasi> ITEM_LIST = new Arraylist<Enoikiasi>();
 	
 	public void loadFile(String data){
 		
 		BufferedReader reader= null;
-		ITEM product = null;
+		Enoikiasi product = null;
 		
 		try{
 			
@@ -21,7 +21,6 @@ public class ReadITEMFile {
 				if (token.equals("Game")){
 					
 					product = new Game();     
-					product.setITEM_TYPE(st.nextToken());
 					product.settitlos(st.nextToken());
 					product.setetairia(st.nextToken());
 					product.setkatigoria(st.nextToken());
@@ -31,7 +30,6 @@ public class ReadITEMFile {
 				else if (token.equals("DVD")){
 					
 					product = new DVD();
-					product.setITEM_TYPE(st.nextToken());
 					product.setSUB_TYPE(st.nextToken());
 					product.settitlos(st.nextToken());
 					product.setetosparagvghs(Integer.parseInt(st.nextToken()));
@@ -55,7 +53,7 @@ public class ReadITEMFile {
 		
 	}
 	
-	public Item get(int i){
+	public Enoikiasi get(int i){
 		return StoreProducts.get(i);
 	}
 
@@ -67,12 +65,12 @@ public class ReadITEMFile {
 
 public class ReadRENTALFile {
 	
-	private ArrayList <RENTAL> ITEM_LIST = new Arraylist<RENTAL>();
+	private ArrayList <Enoikiasi> RENTAL_LIST = new Arraylist<Enoikiasi>();
 	
 	public void loadFile(String data){
 		
 		BufferedReader reader= null;
-		RENTAL product = null;
+		Enoikiasi product = null;
 		
 		try{
 			
@@ -85,20 +83,18 @@ public class ReadRENTALFile {
 				if (token.equals("Game")){
 					
 					product = new Game();     
-					product.setITEM_TYPE(st.nextToken());
-					product.settitlos(st.nextToken());
-					product.setplatforma(st.nextToken());
-					product.setonomaPelati(st.nextToken());
-					product.sethmeromhniaEnoikiasis(Integer.parseInt(st.nextToken()));
+					product.setTitlos(st.nextToken());
+					product.setPlatforma(st.nextToken());
+					product.setOnomaPelati(st.nextToken());
+					product.setHmeromhniaEnoikiasis(Integer.parseInt(st.nextToken()));
 				}
 				else if (token.equals("DVD")){
 					
 					product = new DVD();
-					product.setITEM_TYPE(st.nextToken());
-					product.setSUB_TYPE(st.nextToken());
-					product.settitlos(st.nextToken());
-					product.setonomaPelati(st.nextToken());
-					product.sethmeromhniaEnoikiasis(Integer.parseInt(st.nextToken()));	
+					product.setPlatforma(st.nextToken());
+					product.setTitlos(st.nextToken());
+					product.setOnomaPelati(st.nextToken());
+					product.setHmeromhniaEnoikiasis(Integer.parseInt(st.nextToken()));	
 				}
 
 				StoreProducts.add (product);
@@ -115,7 +111,7 @@ public class ReadRENTALFile {
 		
 	}
 	
-	public RENTAL get(int i){
+	public Enoikiasi get(int i){
 		return StoreProducts.get(i);
 	}
 
