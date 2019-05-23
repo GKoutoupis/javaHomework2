@@ -177,7 +177,7 @@ public class MainApp
            pos= ChooseNoikiasmenoInfo(in, data,tmp1);
            name=data.noikiasmena.get(pos).getTitlos();
            platforma=data.noikiasmena.get(pos).getPlatforma();
-            Xenoikiasi(in,name, platforma,data);
+            Xenoikiasi(name, platforma,data);
          } 
          else if (answer.equals("3")) 
          {
@@ -258,16 +258,19 @@ public static Integer ChooseNoikiasmenoInfo(Scanner in,Database data, Integer tm
                return tmp1;
             }
 
-public static void Xenoikiasi(Scanner in,String name, String platforma, Database data)
-{  Integer pos;
+public static void Xenoikiasi(String name, String platforma, Database data)
+{  Scanner response = new Scanner(System.in);
+
+   Integer pos;
    System.out.println("Thelete na xenoikiasete? (y/n)");
-   if (in.nextLine().equals("y")) {
+   if (response.nextLine().equals("y")) {
+      System.out.println("mpainei mesa");
       pos=data.positionfinder(name,platforma);
       data.xenoikiastike(pos);
 
    }
 }
-public static void CreateFileProsEnoik(Database data)//write data from list to file
+/*public static void CreateFileProsEnoik(Database data)//write data from list to file
 {
    System.out.println(" >>>>>>> Write data from ARRAYLIST to FILE...");
    FileWriter writer=null;
@@ -314,7 +317,7 @@ public static void CreateFileProsEnoik(Database data)//write data from list to f
    {
       System.err.println("Error"+e.getMessage());
    }
-}
+}*/
 public static void CreateFileEnoikiaseis(Database data)//write data from list to file
 {
    System.out.println(" >>>>>>> Write data from ARRAYLIST to FILE...");
