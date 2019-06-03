@@ -27,6 +27,14 @@ public class Dvd extends Enoikiasi
 		this.ithopoioi=ithopoioi;
 		this.diarkeia=diarkeia;
 	}
+	public void setIthopoioi(String ithopoioi)
+	{
+		this.ithopoioi=ithopoioi;
+	}
+	public void setSkinotheths(String skinothetis)
+	{
+		this.skinothetis=skinothetis;
+	}
 	public String getSkinothetis()
 	{
 		return skinothetis;

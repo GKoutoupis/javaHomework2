@@ -19,7 +19,8 @@ public class Database
 	public void xenoikiastike(Integer pos)
 	{
 		tmp=prosenoik.get(pos).getTemaxia();
-		prosenoik.get(pos).setTemaxia(10);
+		System.out.println("tmp="+ tmp);
+		prosenoik.get(pos).setTemaxia(tmp+1);
 		// !!!edv einai to provlima an etrexe svsta tha eprepe na perasei deka temaxia sta pros enoikiasi alla den dinei tipota!
 	}
 	//vriskei se poia thesi sti lista vrisketai ena antikeimeno

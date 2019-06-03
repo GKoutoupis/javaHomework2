@@ -38,16 +38,24 @@ public class Enoikiasi
 		this.katigoria=katigoria;
 		this.telikoKostos=telikoKostos;
 
-		
 	}
-	public void setTitlos(String titlos)	
+	public void setTitlos(String titlos)
 	{
 		this.titlos=titlos;
+	}
+	public void setEtairia(String etairia)
+	{
+		this.etairia=etairia;
+	}
+	public void setKatigoria(String katigoria)
+	{
+		this.katigoria=katigoria;
 	}
 	public void setPlatforma(String platforma)
 	{
 		this.platforma=platforma;
 	}
+	
 	public void setTemaxia(Integer temaxia)
 	{
 		this.temaxia=temaxia;
@@ -83,6 +91,10 @@ public class Enoikiasi
 	public void setXronosEnoikiasis (Integer xronosenoikiasis)
 	{
 		this.xronosenoikiasis=xronosenoikiasis;
+	}
+	public void setEtosParagvghs (String etosparagvghs)
+	{
+		this.etosparagvghs=etosparagvghs;
 	}
 	public String getPlatforma()
 	{

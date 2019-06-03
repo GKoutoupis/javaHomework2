@@ -1,0 +1,93 @@
+ITEM_LIST
+	ITEM
+	{
+		ITEM_TYPE DVD
+		SUB_TYPE dvd
+		TITLE DVD
+		YEAR 1995
+		CAST ithopoioi
+		DIRECTOR skinotheths
+		CATEGORY komodia
+		COPIES 5
+	}
+	ITEM
+	{
+		ITEM_TYPE DVD
+		SUB_TYPE blue-ray
+		TITLE BR
+		YEAR 1995
+		CAST aaa
+		DIRECTOR aaaa
+		CATEGORY komodia
+		COPIES 5
+	}
+	ITEM
+	{
+		ITEM_TYPE DVD
+		SUB_TYPE dvd
+		TITLE Star Wars
+		YEAR 1977
+		CAST Carrie Fisher,Mark Hamill,Harrison Ford
+		DIRECTOR Lucas
+		CATEGORY sci-fi
+		COPIES 5
+	}
+	ITEM
+	{
+		ITEM_TYPE DVD
+		SUB_TYPE blue-ray
+		TITLE Return of the King
+		YEAR 2003
+		CAST Elijah Wood,Viggo Mortensen,Ian McKellen
+		DIRECTOR Peter Jackson
+		CATEGORY adventure,sci-fi
+		COPIES 5
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLE Pokemon Blue
+		COMPANY nintendo
+		PLATFORM nintendo
+		COPIES 20
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLE Super Mario Bros
+		COMPANY nintendo
+		PLATFORM nintendo
+		COPIES 20
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLE Prince of Persia Sands of Time
+		COMPANY Ubisoft
+		PLATFORM Playstation
+		COPIES 2001
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLE Skyrim
+		COMPANY Bethesda
+		PLATFORM Playstation
+		COPIES 202
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLE Halo
+		COMPANY Microsoft
+		PLATFORM Xbox
+		COPIES 4
+	}
+	ITEM
+	{
+		ITEM_TYPE game
+		TITLE Sea of Thieves
+		COMPANY Microsoft
+		PLATFORM Xbox
+		COPIES 18
+	}
